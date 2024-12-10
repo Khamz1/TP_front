@@ -24,7 +24,7 @@ export const Login: React.FC<Props> = ({setSelected}) => {
     } = useForm<Login>({
         mode: "onChange",
         reValidateMode: "onBlur",
-        defaultValue: {
+        defaultValues: {
             email: '',
             password: ""
         },

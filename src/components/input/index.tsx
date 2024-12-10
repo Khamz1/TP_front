@@ -20,14 +20,15 @@ export const Input: React.FC<Props> = (
         type,
         control,
         required = '',
-        endContent
+        endContent,
+
     }
 ) => {
 
     const {
         field,
-        fieldState: {invalid},
-        formState: {errors}
+        fieldState: {invalid}
+
     } = useController({
         name,
         control,
@@ -46,6 +47,6 @@ export const Input: React.FC<Props> = (
             isInvalid={invalid}
             onChange={field.onChange}
             onBlur={field.onBlur}
-            errors={`${errors[name]?.message ?? ''}`}/>
+         />
     )
 }

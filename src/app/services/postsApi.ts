@@ -1,34 +1,34 @@
-import {api} from "./api";
-import {Post} from "../types";
+import { Post } from "../types"
+import { api } from "./api"
 
-export const postsApi = api.injectEndpoints({
+export const postApi = api.injectEndpoints({
     endpoints: (builder) => ({
         createPost: builder.mutation<Post, { content: string }>({
             query: (postData) => ({
                 url: "/posts",
-                method: 'POST',
-                body: postData
-            })
+                method: "POST",
+                body: postData,
+            }),
         }),
         getAllPosts: builder.query<Post[], void>({
             query: () => ({
                 url: "/posts",
-                method: 'Get',
-            })
+                method: "GET",
+            }),
         }),
         getPostById: builder.query<Post, string>({
             query: (id) => ({
-                url: `/posts/${id} `,
-                method: 'GET',
-            })
+                url: `/posts/${id}`,
+                method: "GET",
+            }),
         }),
         deletePost: builder.mutation<void, string>({
             query: (id) => ({
                 url: `/posts/${id}`,
-                method: 'DELETE',
-            })
-        })
-    })
+                method: "DELETE",
+            }),
+        }),
+    }),
 })
 
 export const {
@@ -38,8 +38,8 @@ export const {
     useDeletePostMutation,
     useLazyGetAllPostsQuery,
     useLazyGetPostByIdQuery,
-} = postsApi
+} = postApi
 
 export const {
-    endpoints: {createPost, getAllPosts, getPostById, deletePost},
-} = postsApi
+    endpoints: { createPost, getAllPosts, getPostById, deletePost },
+} = postApi

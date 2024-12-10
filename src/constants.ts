@@ -1,1 +1,1 @@
-export const BASE_URL :string = process.env.NODE_ENV==='none'? 'none':"http://localhost:4000";
+export const BASE_URL :string = process.env.NODE_ENV==='production'? 'http://localhost:4000':"http://localhost:4000";

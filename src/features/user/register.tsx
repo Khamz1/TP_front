@@ -28,7 +28,7 @@ export const Register: React.FC<Props> = ({
     } = useForm<Register>({
         mode: "onChange",
         reValidateMode: "onBlur",
-        defaultValue: {
+        defaultValues: {
             email: '',
             password: "",
             name:""
